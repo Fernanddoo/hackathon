@@ -1,8 +1,10 @@
 import express  from "express";
-import router from "../routes/avaliadorRoutes";
+import routerAvaliador from "../routes/avaliadorRoutes";
+import routerEquipe from "./equipeRoutes";
 
 const appRouter = express();
 
-appRouter.use("/avaliadores", router);
+appRouter.use("/avaliadores", routerAvaliador);
+appRouter.use("/equipes", routerEquipe);
 
 export default appRouter;

@@ -17,7 +17,7 @@ class AvaliadorController {
             if (avaliadores) {
                 return res.status(200).json(avaliadores);
             }
-            return res.status(404).json({ error: "Aavaliadores not found"});
+            return res.status(404).json({ error: "Avaliadores not found"});
         } catch (error) {
             return res.status(500).json({ error: "Error fetching Avaliadores"});
         }
@@ -26,7 +26,7 @@ class AvaliadorController {
     async deleteAvaliador(req: Request, res: Response): Promise<Response> {
         try {
             await avaliadorService.deleteAvaliador(Number(req.params.id));
-            return res.status(200).json({ message: "User deleted successfully"});
+            return res.status(200).json({ message: "Avaliador deleted successfully"});
         } catch (error) {
             return res.status(500).json({ error: "Error deleting Avaliador"});
         }

@@ -1,8 +1,12 @@
 import pool from "../database/dbConfig";
 
+interface Nota {
+    [key:string]: number,
+}
+
 interface Avaliacao {
     id?: number;
-    notas: JSON;
+    notas?: Nota;
     avaliador_id: number;
     equipe_id: number;
 }
