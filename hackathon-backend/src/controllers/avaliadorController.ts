@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import avaliadorService from "../services/avaliadorService";
-import { error } from "console";
 
 class AvaliadorController {
     async createAvaliador(req: Request, res: Response): Promise<Response> {
