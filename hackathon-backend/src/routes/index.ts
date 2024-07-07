@@ -1,5 +1,5 @@
 import express  from "express";
-import routerAvaliador from "../routes/avaliadorRoutes";
+import routerAvaliador from "./avaliadorRoutes";
 import routerEquipe from "./equipeRoutes";
 
 const appRouter = express();
