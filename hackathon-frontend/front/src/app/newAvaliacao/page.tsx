@@ -111,7 +111,7 @@ export default function Page() {
                     <input 
                         type="number" 
                         min="0"
-                        max="0"
+                        max="10"
                         step="1"
                         value={perguntas[pergunta]}
                         onChange={(e) => handleNota(e, pergunta)}
