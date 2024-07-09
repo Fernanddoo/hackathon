@@ -1,20 +1,21 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import api from "../services/api";
+import Link from "next/link";
 
-interface Avaliadores {
+interface IAvaliadores {
   id: number,
   nome: string,
 }
 
-interface Equipes {
+interface IEquipes {
   id: number,
   nome: string,
 }
 
 export default function Home() {
-  const [ avaliadores, setAvaliadores ] = useState<Avaliadores[]>([]);
-  const [ equipes, setEquipes ] = useState<Equipes[]>([]);
+  const [ avaliadores, setAvaliadores ] = useState<IAvaliadores[]>([]);
+  const [ equipes, setEquipes ] = useState<IEquipes[]>([]);
 
   useEffect(() => {
     api.get('/avaliadores').then(response => {
@@ -35,15 +36,15 @@ export default function Home() {
       <div>
         <div className="box ml-auto mr-auto mt-10 mb-10 w-52 border-white border-4 bg-gray-800 rounded text-center text-white">
           <h1 className="mt-2">Avaliadores: {avaliadores.length}</h1>
-          <button className="bg-gray-700 hover:bg-white transition-colors duration-300 hover:text-black rounded mt-2 px-2 mb-2">Mostrar avaliadores</button>
+          <Link href="/allAvaliadores" className="bg-gray-700 hover:bg-white transition-colors duration-300 hover:text-black rounded mt-2 px-2">Mostrar avaliadores</Link>
         </div>
         <div className="box ml-auto mr-auto mt-10 mb-10 w-52 border-white border-4 bg-gray-800 rounded text-center text-white">
           <h1 className="mt-2">Equipes: {equipes.length}</h1>
-          <button className="bg-gray-700 hover:bg-white transition-colors duration-300 hover:text-black rounded mt-2 px-2 mb-2">Mostrar equipes</button>
+          <Link href="/allEquipes" className="bg-gray-700 hover:bg-white transition-colors duration-300 hover:text-black rounded mt-2 px-2">Mostrar equipes</Link>
         </div>
         <div className="box ml-auto mr-auto mt-10 mb-10 w-52 border-white border-4 bg-gray-800 rounded text-center text-white">
           <h1 className="mt-2">Notas atribuídas: {avaliadores.length}</h1>
-          <button className="bg-gray-700 hover:bg-white transition-colors duration-300 hover:text-black rounded mt-2 px-2 mb-2">Mostrar notas</button>
+          <Link href="/allAvaliadores" className="bg-gray-700 hover:bg-white transition-colors duration-300 hover:text-black rounded mt-2 px-2">Mostrar notas</Link>
         </div>
       </div>
     </main>

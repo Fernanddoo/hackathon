@@ -17,7 +17,7 @@ const Header = () => {
         <nav className="flex justify-between items-center">
           <div className="flex gap-5 items-center">
             <Link className="hover:text-gray-300 transition-colors duration-300 cursor-pointer text-xl font-semibold" href="/">
-              Super Avaliador 300
+              Super Avaliador 3000
             </Link>
           </div>
           <div>
@@ -27,6 +27,7 @@ const Header = () => {
             >
               Cadastrar avaliador
             </Link>
+            <Link href="/newEquipes">Cadastrar Equipe</Link>
           </div>
         </nav>
       </div>

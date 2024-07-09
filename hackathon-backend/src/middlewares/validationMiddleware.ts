@@ -26,4 +26,17 @@ const validateEquipe = [
     },
 ];
 
-export { validateAvaliador, validateEquipe };
+const validateAvaliacao = [
+    check("notas").isJSON().notEmpty(),
+    check("avaliador_id").isNumeric().notEmpty(),
+    check("equipe_id").isNumeric().notEmpty(),
+    (req: Request, res: Response, next: NextFunction) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+        next();
+    },
+];
+
+export { validateAvaliador, validateEquipe, validateAvaliacao };
