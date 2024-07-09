@@ -40,7 +40,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-4">
       <div className="container mx-auto text-center">
-        <p>Trabalho de Fernando Dreyer Radünz - Todos os direitos reservados</p>
+        <p>Trabalho de Fernando Dreyer Radünz</p>
       </div>
     </footer>
   )
