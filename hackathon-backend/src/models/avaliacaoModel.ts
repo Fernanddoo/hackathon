@@ -1,12 +1,10 @@
 import pool from "../database/dbConfig";
 
-interface Nota {
-    [key:string]: number,
-}
+
 
 interface Avaliacao {
     id?: number;
-    notas?: Nota;
+    notas: object;
     avaliador_id: number;
     equipe_id: number;
 }
@@ -21,14 +19,19 @@ class AvaliacaoModel {
         return resultado.rows[0];
     }
 
-    async findAllAvaliacoes(): Promise<Avaliacao[] | null> {
+    async findAllAvaliacoes(): Promise<Avaliacao[]> {
         const resultado = await pool.query("SELECT * FROM avaliacoes");
-        return resultado.rows || null;
+        return resultado.rows;
     }
 
-    async findByAvaliador(avaliador_id: number): Promise<Avaliacao[] | null> {
+    async findByAvaliador(avaliador_id: number): Promise<Avaliacao[]> {
         const resultado = await pool.query("SELECT * FROM avaliacoes WHERE avaliador_id = $1", [avaliador_id]);
-        return resultado.rows || null;
+        return resultado.rows;
+    }
+
+    async findByEquipe(equipe_id: number): Promise<Avaliacao[]> {
+        const resultado = await pool.query("SELECT * FROM avaliacoes WHERE equipe_id = $1", [equipe_id]);
+        return resultado.rows;
     }
 
     async updateAvaliacao(id: number, avaliacao: Partial<Avaliacao>): Promise<Avaliacao | null> {

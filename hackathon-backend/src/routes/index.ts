@@ -7,6 +7,6 @@ const appRouter = express();
 
 appRouter.use("/avaliadores", routerAvaliador);
 appRouter.use("/equipes", routerEquipe);
-appRouter.use("avaliacoes", routerAvaliacao);
+appRouter.use("/avaliacoes", routerAvaliacao);
 
 export default appRouter;

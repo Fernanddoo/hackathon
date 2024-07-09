@@ -7,7 +7,8 @@ class AvaliacaoService {
         this.avaliacaoModel = new AvaliacaoModel();
     }
 
-    async createAvaliacao(avaliacaoData: Avaliacao): Promise<Avaliacao> {
+    async createAvaliacao(notas: object, avaliador_id: number, equipe_id: number): Promise<Avaliacao> {
+        const avaliacaoData = { notas, avaliador_id, equipe_id };
         return this.avaliacaoModel.create(avaliacaoData);
     }
 
@@ -17,6 +18,10 @@ class AvaliacaoService {
 
     async findByAvaliador(avaliador_id: number): Promise<Avaliacao[] | null> {
         return this.avaliacaoModel.findByAvaliador(avaliador_id);
+    }
+
+    async findByEquipe(equipe_id: number): Promise<Avaliacao[] | null> {
+        return this.avaliacaoModel.findByEquipe(equipe_id);
     }
 
     async updateAvaliacao(id: number, avaliacaoData: Partial<Avaliacao>): Promise<Avaliacao | null> {

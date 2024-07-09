@@ -27,9 +27,9 @@ const validateEquipe = [
 ];
 
 const validateAvaliacao = [
-    check("notas").isJSON().notEmpty(),
-    check("avaliador_id").isNumeric().notEmpty(),
-    check("equipe_id").isNumeric().notEmpty(),
+    check("notas").isObject().notEmpty(),
+    check("avaliador_id").isInt().notEmpty(),
+    check("equipe_id").isInt().notEmpty(),
     (req: Request, res: Response, next: NextFunction) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {

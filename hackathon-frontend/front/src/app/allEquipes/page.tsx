@@ -19,7 +19,7 @@ export default function Page() {
       });
     }, [equipes]);
 
-    const deleteAvaliador = async (id: number) => {
+    const deleteEquipe = async (id: number) => {
         await api.delete(`/equipes/${id}`);
     }
 
@@ -33,7 +33,7 @@ export default function Page() {
                             <div key={equipe.id} className="mb-2">
                                 <h1>{equipe.nome}</h1>
                                 <button 
-                                onClick={() => deleteAvaliador(equipe.id)}
+                                onClick={() => deleteEquipe(equipe.id)}
                                 className="inline-block w-[30%] bg-red-500 rounded hover:bg-red-800 transition-colores duration-300 text-sm font-semibold"
                                 >
                                     Excluir

@@ -27,7 +27,8 @@ const Header = () => {
             >
               Cadastrar avaliador
             </Link>
-            <Link href="/newEquipes">Cadastrar Equipe</Link>
+            <Link href="/newEquipes" className="mr-10">Cadastrar Equipe</Link>
+            <Link href="/newAvaliacao" className="mr-10">Cadastrar Avaliação</Link>
           </div>
         </nav>
       </div>
